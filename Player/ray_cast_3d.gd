@@ -6,6 +6,9 @@ func _process(delta: float) -> void:
 	if is_colliding():
 		var collider = get_collider()
 		if collider is interactible:
-			label.text = "ciao" + collider.int_name
+			label.text = collider.int_name
+			if Input.is_action_just_pressed("interaction"):
+				collider.interact.emit()
+			
 	else:
 		label.text = ""

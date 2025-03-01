@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxaip1h3dtt5b"]
+[gd_scene load_steps=8 format=3 uid="uid://dxaip1h3dtt5b"]
 
 [ext_resource type="PackedScene" uid="uid://y8ebu5mpmgbd" path="res://Player/player.tscn" id="1_40o4e"]
 [ext_resource type="PackedScene" uid="uid://out7mgs44n2h" path="res://test_interact.tscn" id="2_oaj82"]
 [ext_resource type="PackedScene" uid="uid://c235khf6bdasc" path="res://Interactibles/button.tscn" id="3_5f2k8"]
+[ext_resource type="PackedScene" uid="uid://dydqisi646ic1" path="res://Interactibles/static_body_3d.tscn" id="4_x5wpe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8uej0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -166,13 +167,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54613, 0)
 [node name="Test_interact" parent="." instance=ExtResource("2_oaj82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57656, 1.5, -2.72007)
 
-[node name="Button" parent="." instance=ExtResource("3_5f2k8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34579, 0.957036, -3.00385)
+[node name="StaticBody3D" parent="." instance=ExtResource("3_5f2k8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43494, 1, -2.38481)
 collision_layer = 5
 collision_mask = 5
 
-[node name="Button2" parent="." instance=ExtResource("3_5f2k8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26047, -3.53888)
+[node name="StaticBody3D2" parent="." instance=ExtResource("4_x5wpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.818173, 1, -2.52731)
 collision_layer = 5
 collision_mask = 5
-int_name = "coglione"
