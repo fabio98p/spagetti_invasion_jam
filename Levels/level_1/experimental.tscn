@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxaip1h3dtt5b"]
+[gd_scene load_steps=4 format=3 uid="uid://dxaip1h3dtt5b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8uej0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -12,11 +12,11 @@ background_mode = 2
 sky = SubResource("Sky_40o4e")
 tonemap_mode = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_8uej0"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5f2k8"]
-
 [node name="Experimental" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.848067, 0.52989, 0, -0.52989, 0.848067, 7.676, 113.166, 295.529)
+fov = 70.0353
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oaj82")
@@ -25,14 +25,36 @@ environment = SubResource("Environment_oaj82")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(542.803, 0, 0, 0, 1.04736, 0, 0, 0, 484.215, 0, 0, 0)
-mesh = SubResource("BoxMesh_8uej0")
-skeleton = NodePath("CollisionShape3D")
+[node name="Floor" type="CSGBox3D" parent="."]
+size = Vector3(100, 1, 100)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
-shape = SubResource("BoxShape3D_5f2k8")
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.848067, 0.52989, 0, -0.52989, 0.848067, 7.676, 113.166, 295.529)
-fov = 70.0353
+[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01184, 1.03879, 0.966382)
+size = Vector3(0.1, 5, 5)
+
+[node name="Wall6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54774, 1.03879, 0.966382)
+size = Vector3(0.1, 5, 5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/Wall6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198967, 0.231128, 1.19209e-07)
+operation = 2
+size = Vector3(1, 1.578, 1.28125)
+
+[node name="Wall2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0.128033, 1.03879, -2.7405)
+size = Vector3(0.1, 5, 5)
+
+[node name="Wall3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 4.40826, 1.03879, -2.7404)
+size = Vector3(0.1, 5, 5)
+
+[node name="Wall4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0.128546, 1.03879, 4.67241)
+size = Vector3(0.1, 5, 5)
+
+[node name="Wall5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 4.40826, 1.03879, 4.67205)
+size = Vector3(0.1, 5, 5)
