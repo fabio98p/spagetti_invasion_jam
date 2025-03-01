@@ -31,64 +31,70 @@ size = Vector3(100, 1, 100)
 [node name="Mura_corridoio" type="CSGCombiner3D" parent="."]
 
 [node name="Wall" type="CSGBox3D" parent="Mura_corridoio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -5.012, 1.039, 0.966)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -9, 1.039, 0)
 size = Vector3(0.1, 5, 5)
 
 [node name="Wall6" type="CSGBox3D" parent="Mura_corridoio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 9.548, 1.039, 0.966)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 9, 1.039, 0)
 size = Vector3(0.1, 5, 5)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Mura_corridoio/Wall6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -0.198967, 0.231128, 1.19209e-07)
-operation = 2
-size = Vector3(1, 1.578, 1.28125)
+[node name="Wall7" type="CSGBox3D" parent="Mura_corridoio"]
+transform = Transform3D(-4.37114e-08, 0, 2, 0, 1, 0, -1, 0, -8.74228e-08, 0, 1.039, -9)
+size = Vector3(0.1, 5, 5)
+
+[node name="Wall8" type="CSGBox3D" parent="Mura_corridoio"]
+transform = Transform3D(-4.37114e-08, 0, 2, 0, 1, 0, -1, 0, -8.74228e-08, 0, 1.039, 9)
+size = Vector3(0.1, 5, 5)
 
 [node name="Wall2" type="CSGBox3D" parent="Mura_corridoio"]
-transform = Transform3D(0.5, 0, -1.73205, 0, 1, 0, 0.866025, 0, 1, -2.128, 1.039, -4.74)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, 1.41421, 0, 1, 0, -0.707107, 0, 1.41421, 6.24, 1.039, -6.239)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Wall3" type="CSGBox3D" parent="Mura_corridoio"]
-transform = Transform3D(0.5, 0, 1.73205, 0, 1, 0, -0.866025, 0, 1, 6.408, 1.039, -4.74)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, -1.41421, 0, 1, 0, 0.707107, 0, 1.41421, -6.239, 1.039, -6.24)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Wall4" type="CSGBox3D" parent="Mura_corridoio"]
-transform = Transform3D(0.5, 0, 1.73205, 0, 1, 0, -0.866025, 0, 1, -2.129, 1.039, 6.672)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, -1.41421, 0, 1, 0, 0.707107, 0, 1.41421, 6.239, 1.039, 6.239)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Wall5" type="CSGBox3D" parent="Mura_corridoio"]
-transform = Transform3D(0.5, 0, -1.73205, 0, 1, 0, 0.866025, 0, 1, 6.408, 1.039, 6.672)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, 1.41421, 0, 1, 0, -0.707107, 0, 1.41421, -6.239, 1.039, 6.238)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Vetri" type="CSGCombiner3D" parent="."]
 
 [node name="Wall" type="CSGBox3D" parent="Vetri"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01184, 1.03879, 0.966382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.039, 0)
 size = Vector3(0.1, 5, 5)
 
 [node name="Wall6" type="CSGBox3D" parent="Vetri"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54774, 1.03879, 0.966382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.03879, 0)
 size = Vector3(0.1, 5, 5)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Vetri/Wall6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198967, 0.231128, 1.19209e-07)
-operation = 2
-size = Vector3(1, 1.578, 1.28125)
+[node name="Wall7" type="CSGBox3D" parent="Vetri"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.039, -6)
+size = Vector3(0.1, 5, 5)
+
+[node name="Wall8" type="CSGBox3D" parent="Vetri"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.039, 6)
+size = Vector3(0.1, 5, 5)
 
 [node name="Wall2" type="CSGBox3D" parent="Vetri"]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0.128033, 1.03879, -2.7405)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 4.24001, 1.03879, -4.23948)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Wall3" type="CSGBox3D" parent="Vetri"]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 4.40826, 1.03879, -2.7404)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.23883, 1.03879, -4.24002)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Wall4" type="CSGBox3D" parent="Vetri"]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0.128546, 1.03879, 4.67241)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 4.23921, 1.03879, 4.23926)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="Wall5" type="CSGBox3D" parent="Vetri"]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 4.40826, 1.03879, 4.67205)
-size = Vector3(0.1, 5, 5)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.23915, 1.03879, 4.23845)
+size = Vector3(0.1, 5, 5.02136)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
