@@ -6,7 +6,7 @@ extends CharacterBody3D
 const SPEED = 4.0
 const SPRINT = 7.0
 const JUMP_VELOCITY = 4.5
-const SESITIVITY = 0.01
+const SESITIVITY = 0.003
 
 #head bob
 const BOB_FREQ = 3
