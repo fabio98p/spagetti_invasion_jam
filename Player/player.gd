@@ -3,8 +3,8 @@ extends CharacterBody3D
 @onready var head: Node3D = $Head
 @onready var camera_3d: Camera3D = $Head/Camera3D
 
-const SPEED = 4.0
-const SPRINT = 7.0
+const SPEED = 3.0
+const SPRINT = 5.0
 const JUMP_VELOCITY = 4.5
 const SESITIVITY = 0.003
 
@@ -39,10 +39,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 	else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#velocity.z = move_toward(velocity.z, 0, SPEED)
-		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 7)
-		velocity.z = lerp(velocity.z, direction.x * SPEED, delta * 7)
+		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 9)
+		velocity.z = lerp(velocity.z, direction.x * SPEED, delta * 9)
 		
 	#head bobbing
 	t_bob += delta * velocity.length() * float(is_on_floor())
