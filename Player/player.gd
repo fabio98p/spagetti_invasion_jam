@@ -10,7 +10,7 @@ const SESITIVITY = 0.003
 
 #head bob
 const BOB_FREQ = 3
-const BOB_AMP = 0.05
+const BOB_AMP = 0.02
 var t_bob = 0.0
 
 
