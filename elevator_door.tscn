@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://csagxaxdjf46w"]
+[gd_scene load_steps=15 format=3 uid="uid://csagxaxdjf46w"]
 
 [ext_resource type="Script" uid="uid://dj4betpne30py" path="res://elevator_door.gd" id="1_you3r"]
 
@@ -9,6 +9,57 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_you3r"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Animation" id="Animation_you3r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.429585, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.429585, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody3D2/MeshInstance3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.22706, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StaticBody3D2/CollisionShape3D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.22706, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_3u8dv"]
 resource_name = "open_door"
@@ -62,8 +113,9 @@ tracks/3/keys = {
 "values": [Vector3(1.22706, 0, 0), Vector3(1.99503, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_you3r"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_xi2ua"]
+resource_name = "clode_door"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,10 +123,10 @@ tracks/0/path = NodePath("StaticBody3D/MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.429585, 0, 0)]
+"values": [Vector3(-0.324971, 0, 0), Vector3(0.429585, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,10 +135,10 @@ tracks/1/path = NodePath("StaticBody3D/CollisionShape3D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.429585, 0, 0)]
+"values": [Vector3(-0.324971, 0, 0), Vector3(0.429585, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -95,10 +147,10 @@ tracks/2/path = NodePath("StaticBody3D2/MeshInstance3D2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1.22706, 0, 0)]
+"values": [Vector3(1.99503, 0, 0), Vector3(1.22706, 0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -107,40 +159,41 @@ tracks/3/path = NodePath("StaticBody3D2/CollisionShape3D2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1.22706, 0, 0)]
+"values": [Vector3(1.99503, 0, 0), Vector3(1.22706, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xi2ua"]
 _data = {
 &"RESET": SubResource("Animation_you3r"),
+&"clode_door": SubResource("Animation_xi2ua"),
 &"open_door": SubResource("Animation_3u8dv")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3u8dv"]
-animation = &"RESET"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xi2ua"]
+animation = &"clode_door"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_you3r"]
 animation = &"open_door"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xi2ua"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vu8ev"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vu8ev"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_you3r"]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bqbt6"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xi2ua"]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ajajq"]
-states/RESET/node = SubResource("AnimationNodeAnimation_3u8dv")
-states/RESET/position = Vector2(449, 164)
 states/Start/position = Vector2(211, 82)
+states/clode_door/node = SubResource("AnimationNodeAnimation_xi2ua")
+states/clode_door/position = Vector2(449, 160)
 states/open_door/node = SubResource("AnimationNodeAnimation_you3r")
 states/open_door/position = Vector2(449, 40)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_xi2ua"), "open_door", "RESET", SubResource("AnimationNodeStateMachineTransition_vu8ev"), "RESET", "open_door", SubResource("AnimationNodeStateMachineTransition_bqbt6")]
+transitions = ["Start", "clode_door", SubResource("AnimationNodeStateMachineTransition_vu8ev"), "clode_door", "open_door", SubResource("AnimationNodeStateMachineTransition_you3r"), "open_door", "clode_door", SubResource("AnimationNodeStateMachineTransition_xi2ua")]
 graph_offset = Vector2(-63, -9)
 
 [node name="Elevator_door" type="Node3D"]

@@ -244,5 +244,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.986, 1.5998, -0.27422)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7723, 1.71767, -1.45)
 int_name = "bottone"
 
-[connection signal="interact" from="Button" to="Elevator_door" method="_on_button_interact"]
 [connection signal="interact" from="Button" to="Elevator_door" method="toggle"]
+[connection signal="interact" from="Button" to="Elevator_door" method="_on_button_interact"]

@@ -8,12 +8,7 @@ func _ready() -> void:
 
 func toggle():
 	is_open = not is_open
-	print("ciao")
 	if is_open:
 		playback.travel("open_door")
 	else:
-		playback.travel("RESET")
-
-
-func _on_button_interact() -> void:
-	print("ciao")
+		playback.travel("clode_door")
