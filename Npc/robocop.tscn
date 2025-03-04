@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://4y0wowfqhgql"]
+
+[ext_resource type="Script" uid="uid://c7k8qvausuy7s" path="res://Npc/robocop.gd" id="1_dn30v"]
+[ext_resource type="PackedScene" uid="uid://5je8gjbyihuy" path="res://Assets/Model_3d/the_guy_is_like_robocop_animated/scene.gltf" id="1_h5f3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dn30v"]
+size = Vector3(1.1416, 2.9185, 1)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_dn30v")
+int_name = "robocop"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_h5f3q")]
+
+[node name="Skeleton3D" parent="Sketchfab_Scene/Sketchfab_model/f95221c0e8f743a4aeddb1a89a754038_fbx/Object_2/RootNode/Object_4" index="0"]
+bones/1/position = Vector3(0.303132, 110.048, 0.674012)
+bones/1/rotation = Quaternion(-0.0204547, -0.0344635, -0.00124451, 0.999196)
+bones/2/rotation = Quaternion(-0.0311069, -0.00767199, -0.00211402, 0.999484)
+bones/3/rotation = Quaternion(0.0386236, -0.0139125, -0.00988985, 0.999108)
+bones/4/rotation = Quaternion(0.0386236, -0.0139125, -0.00988985, 0.999108)
+bones/5/rotation = Quaternion(-0.0542853, 0.00964387, 0.0052344, 0.998465)
+bones/6/rotation = Quaternion(0.0484146, 0.0518978, 0.00933784, 0.997434)
+bones/8/rotation = Quaternion(-0.574522, -0.458582, 0.540272, -0.409553)
+bones/9/rotation = Quaternion(0.474646, 0.160768, 0.0777136, 0.861873)
+bones/10/rotation = Quaternion(-0.00588131, -0.00387772, 0.158371, 0.987355)
+bones/11/rotation = Quaternion(0.00338255, 0.416443, -0.0749195, 0.906063)
+bones/12/rotation = Quaternion(-0.122051, -0.0851787, 0.265417, 0.952577)
+bones/13/rotation = Quaternion(0.0537867, -0.00424844, -0.0782678, 0.995471)
+bones/14/rotation = Quaternion(-1.16155e-05, -0.000520687, 0.107224, 0.994235)
+bones/16/rotation = Quaternion(0.092914, 0.00152563, 0.240577, 0.966172)
+bones/17/rotation = Quaternion(0.100795, -0.00289957, 0.171002, 0.980097)
+bones/18/rotation = Quaternion(-0.000105165, 0.00340575, -0.0358531, 0.999351)
+bones/20/rotation = Quaternion(0.589816, -0.426408, 0.543084, 0.418753)
+bones/21/rotation = Quaternion(0.466114, -0.212705, -0.128042, 0.849176)
+bones/22/rotation = Quaternion(-0.00794154, 0.0254008, -0.125451, 0.991743)
+bones/23/rotation = Quaternion(-0.00711475, -0.390225, 0.00849323, 0.920653)
+bones/24/rotation = Quaternion(-0.10097, 0.0556032, -0.215759, 0.969619)
+bones/25/rotation = Quaternion(0.0497394, 0.0124946, 0.105939, 0.993049)
+bones/26/rotation = Quaternion(-0.000108004, 0.0035689, -0.184633, 0.982801)
+bones/28/rotation = Quaternion(0.0754508, -0.0243691, -0.239903, 0.967554)
+bones/29/rotation = Quaternion(0.095607, 0.00216382, -0.123435, 0.987734)
+bones/30/rotation = Quaternion(8.09059e-05, 0.00217413, -0.024112, 0.999707)
+bones/32/rotation = Quaternion(0.0787012, 0.0744989, 0.993926, 0.0191497)
+bones/33/rotation = Quaternion(-0.24042, -0.00116313, -0.0237863, 0.970377)
+bones/34/rotation = Quaternion(0.571524, 0.0545432, 0.0745741, 0.815368)
+bones/35/rotation = Quaternion(0.355875, -0.0280118, 0.0109097, 0.93405)
+bones/37/rotation = Quaternion(-0.0446843, 0.198015, 0.97705, 0.0645428)
+bones/38/rotation = Quaternion(-0.515669, 0.00299885, 0.0349857, 0.856068)
+bones/39/rotation = Quaternion(0.45236, -0.0509728, 0.0355389, 0.889668)
+bones/40/rotation = Quaternion(0.361103, -0.00642218, -0.0225467, 0.932231)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48203, 0)
+shape = SubResource("BoxShape3D_dn30v")
+
+[connection signal="interact" from="." to="." method="_on_interact"]
+
+[editable path="Sketchfab_Scene"]

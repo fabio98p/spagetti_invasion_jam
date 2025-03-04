@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxaip1h3dtt5b"]
+[gd_scene load_steps=8 format=3 uid="uid://dxaip1h3dtt5b"]
 
 [ext_resource type="PackedScene" uid="uid://y8ebu5mpmgbd" path="res://Player/player.tscn" id="1_40o4e"]
 [ext_resource type="PackedScene" uid="uid://c235khf6bdasc" path="res://Interactibles/Button/button.tscn" id="3_5f2k8"]
 [ext_resource type="PackedScene" uid="uid://csagxaxdjf46w" path="res://elevator_door.tscn" id="3_x5wpe"]
+[ext_resource type="PackedScene" uid="uid://4y0wowfqhgql" path="res://Npc/robocop.tscn" id="4_x5wpe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8uej0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -27,6 +28,8 @@ shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="."]
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(100, 1, 100)
 
 [node name="Mura_corridoio" type="CSGCombiner3D" parent="."]
@@ -161,7 +164,7 @@ operation = 2
 size = Vector3(1, 2.4082, 0.810059)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_40o4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8894, 1.54613, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0738945, 1.54613, 0)
 
 [node name="Changing_room" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -243,6 +246,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.986, 1.5998, -0.27422)
 [node name="Button" parent="." instance=ExtResource("3_5f2k8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7723, 1.71767, -1.45)
 int_name = "bottone"
+
+[node name="RigidBody3D" parent="." instance=ExtResource("4_x5wpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.586404, 0.43007, -4.14189)
 
 [connection signal="interact" from="Button" to="Elevator_door" method="toggle"]
 [connection signal="interact" from="Button" to="Elevator_door" method="_on_button_interact"]
