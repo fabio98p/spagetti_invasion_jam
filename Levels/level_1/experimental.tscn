@@ -250,5 +250,5 @@ int_name = "bottone"
 [node name="RigidBody3D" parent="." instance=ExtResource("4_x5wpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.586404, 0.43007, -4.14189)
 
-[connection signal="interact" from="Button" to="Elevator_door" method="toggle"]
 [connection signal="interact" from="Button" to="Elevator_door" method="_on_button_interact"]
+[connection signal="interact" from="Button" to="Elevator_door" method="toggle"]

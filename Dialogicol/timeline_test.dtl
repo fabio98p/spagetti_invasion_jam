@@ -1,0 +1,18 @@
+cristina: prova
+label go back
+cristina: del CAZZO
+cristina: in tooooculeeee
+[text_input var="response"]
+if {response} == "...":
+	cristina: uh bello coglione
+	cristina: FABIETOOOOOO
+	[wait time="2.0"]
+	jump go back
+if {response} == "culo":
+	cristina: fabio culo?
+	- si è culo
+		[signal arg="fabio"]
+		cristina: culetto
+	- cosa?
+		[signal arg="rosa"]
+		cristina: la merda rosa

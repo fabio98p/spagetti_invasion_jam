@@ -24,6 +24,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		get_tree().quit()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
